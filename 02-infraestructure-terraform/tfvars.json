@@ -1,0 +1,27 @@
+{
+    "aws_profile": "default",
+    "aws_region": "us-east-1",
+    "env": "DEV",
+    "vpc_cidr": "10.12.0.0/24",
+    "product": "Terraform IaC",
+    "instance_type": "t3.small",
+    "temp_windows_user_name": "terraform",
+    "temp_windows_user_pass": "P@ssword01",
+    "domain_name": "terraform-infra.local",
+    "dir_type": "SimpleAD",
+    "az_names": [
+        "us-east-1a",
+        "us-east-1b"
+    ],
+    "subnet_cidr_blocks": [
+        "10.12.0.0/25",
+        "10.12.0.128/25"
+    ],
+    "allocated_storage": "20",
+    "engine_name": "mysql",
+    "engine_version": "5.7",
+    "db_instance_type": "db.t2.small",
+    "db_name": "webdb",
+    "username": "admin",
+    "password": "secreto2k20"
+}

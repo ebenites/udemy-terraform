@@ -1,0 +1,29 @@
+{
+    "variables": {
+        "region": "us-east-1",
+        "ami_name": "my-ubuntu",
+        "instance_type": "t2.micro"
+    },
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "region": "{{user `region`}}",
+            "source_ami_filter": {
+                "owners": "099720109477",
+                "filters": {
+                    "name": "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"
+                },
+                "most_recent": true
+            },
+            "ami_name": "{{user `ami_name`}}-{{timestamp}}",
+            "instance_type": "{{user `instance_type`}}",
+            "ssh_username": "ubuntu"
+        }    
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "./config.sh"
+        }
+    ]
+}
